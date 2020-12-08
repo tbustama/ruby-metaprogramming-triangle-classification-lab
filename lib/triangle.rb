@@ -12,8 +12,6 @@ class Triangle
     if sides[0] + sides[1] <= sides[2] || sides.any? {|x| x<= 0} || sides.length != 3
       begin
         raise TriangleError
-      rescue TriangleError => error
-        p error.message
       end
     else  
       case sides.uniq.size
@@ -27,9 +25,7 @@ class Triangle
   end
 
   class TriangleError < StandardError
-    def message
-      "This is not a valid triangle!"
-    end
+      puts "This is not a valid triangle!"
   end
 
 end
